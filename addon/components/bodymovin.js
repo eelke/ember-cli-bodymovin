@@ -11,6 +11,7 @@ export default Ember.Component.extend({
   autoloadSegments: true,
   renderType: "svg",
   animation: null,
+  rendererSettings: {}, 
 
   setupBodymovin: Ember.on('didInsertElement', function() {
 
@@ -22,6 +23,7 @@ export default Ember.Component.extend({
       setSubframe: this.get('setSubframe'),
       autoplay: this.get('autoplay'),
       loop: this.get('loop'),
+      rendererSettings: this.get('rendererSettings'), 
       path: (!this.get('external')) ? `animations/${this.get('path')}.json` : this.get('path') 
     });
 
